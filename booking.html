@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Оформление заявки</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="booking.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          <svg
+            class="logo-icon"
+            width="28"
+            height="28"
+            viewbox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M2 20 L9 7 L14 13 L17 3 L22 20 Z" fill="currentColor" />
+          </svg>
+          <span>Региональные маршруты</span>
+        </a>
+        <nav aria-label="Главное меню">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html">Маршруты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <h1>Оформление<br />заявки</h1>
+
+      <form class="booking-form" id="bookingForm" novalidate>
+        <div class="form-group">
+          <label for="tour-date">Дата поездки</label>
+          <select id="tour-date" class="form-control">
+            <option value="" disabled selected>Выберите дату</option>
+            <option value="15-18 июля">15–18 июля</option>
+            <option value="20-23 июля">20–23 июля</option>
+            <option value="5-8 августа">5–8 августа</option>
+          </select>
+          <label for="user-name">Имя</label>
+          <input
+            type="text"
+            id="user-name"
+            class="form-control"
+            placeholder="Иван"
+            required
+          />
+
+          <label for="user-surname">Фамилия</label>
+          <input
+            type="text"
+            id="user-surname"
+            class="form-control"
+            placeholder="Иванов"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="user-phone">Телефон</label>
+          <input
+            type="tel"
+            id="user-phone"
+            class="form-control"
+            placeholder="+7 (999) 123-45-67"
+            maxlength="18"
+            autocomplete="off"
+            required
+          />
+          <span class="error-message" id="phoneError">Укажите телефон</span>
+
+          <label for="user-email">E-mail</label>
+          <input
+            type="email"
+            id="user-email"
+            class="form-control"
+            placeholder="example@mail.ru"
+            required
+          />
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">Маршрут</span>
+          <span class="info-value" id="display-title">“Горное озеро”</span>
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">Дата</span>
+          <span class="info-value" id="display-date">15-18 июля</span>
+        </div>
+
+        <div class="info-block">
+          <span class="info-label">Цена</span>
+          <span class="info-value" id="display-price">15 000 р</span>
+        </div>
+
+        <button type="submit" class="submit-btn">Отправить заявку</button>
+      </form>
+    </main>
+
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>&copy; 2026 Региональные маршруты. Учебный проект.</p>
+      </div>
+    </footer>
+
+    <script src="booking.js" defer></script>
+  </body>
+</html>

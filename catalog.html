@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Региональные маршруты</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="logo" href="index.html">
+          <svg
+            class="logo-icon"
+            width="28"
+            height="28"
+            viewbox="0 0 24 24"
+            aria-hidden="true"
+          >
+            <path d="M2 20 L9 7 L14 13 L17 3 L22 20 Z" fill="currentColor" />
+          </svg>
+          <span>Региональные маршруты</span>
+        </a>
+
+        <nav aria-label="Главное меню">
+          <ul class="nav-list">
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="catalog.html" aria-current="page">Маршруты</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <h1>Региональные маршруты</h1>
+
+      <form class="filters">
+        <p class="filters-title">Фильтры</p>
+        <div class="filters-grid">
+          <div>
+            <label for="level">Сложность</label>
+            <select id="level">
+              <option>Любая</option>
+              <option>Лёгкая</option>
+              <option>Средняя</option>
+              <option>Сложная</option>
+            </select>
+          </div>
+          <div>
+            <label for="days">Длительность</label>
+            <select id="days">
+              <option>Любая</option>
+              <option>3–5 дней</option>
+              <option>6–8 дней</option>
+            </select>
+          </div>
+          <div>
+            <label for="season">
+              Сезон: <output id="season-name">Весна</output>
+            </label>
+            <input id="season" type="range" min="1" max="4" value="2" />
+            <div class="season-scale">
+              <span>Зима</span>
+              <span>Весна</span>
+              <span>Лето</span>
+              <span>Осень</span>
+            </div>
+          </div>
+        </div>
+      </form>
+
+      <p class="count">Найдено: 12 маршрутов</p>
+
+      <section class="cards">
+        <article class="card">
+          <img src="images/img_1.jpg" alt="Лесное озеро" />
+          <h2>Лесное озеро</h2>
+          <p class="meta"><span>3–5 дней</span><span>Лёгкая</span></p>
+          <p class="price">15 000 р</p>
+          <div class="card-buttons">
+            <button
+              class="btn-book"
+              data-title="Лесное озеро"
+              data-price="15 000 р"
+            >
+              Оформить заявку
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/img_2.jpg" alt="Пик Чегет" />
+          <h2>Пик Чегет</h2>
+          <p class="meta"><span>6–8 дней</span><span>Сложная</span></p>
+          <p class="price">25 000 р</p>
+          <div class="card-buttons">
+            <button
+              class="btn-book"
+              data-title="Пик Чегет"
+              data-price="25 000 р"
+            >
+              Оформить заявку
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/img_3.jpg" alt="Водопад Девичьи слёзы" />
+          <h2>Водопад Девичьи слёзы</h2>
+          <p class="meta"><span>3–5 дней</span><span>Средняя</span></p>
+          <p class="price">12 000 р</p>
+          <div class="card-buttons">
+            <button
+              class="btn-book"
+              data-title="Водопад Девичьи слёзы"
+              data-price="12 000 р"
+            >
+              Оформить заявку
+            </button>
+          </div>
+        </article>
+
+        <article class="card">
+          <img src="images/img_4.jpg" alt="Долина Нарзанов" />
+          <h2>Долина Нарзанов</h2>
+          <p class="meta"><span>6–8 дней</span><span>Средняя</span></p>
+          <p class="price">20 000 р</p>
+          <div class="card-buttons">
+            <button
+              class="btn-book"
+              data-title="Долина Нарзанов"
+              data-price="20 000 р"
+            >
+              Оформить заявку
+            </button>
+          </div>
+        </article>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="footer-inner">
+        <p>&copy; 2026 Региональные маршруты. Учебный проект.</p>
+      </div>
+    </footer>
+    <script>
+      document.querySelectorAll(".btn-book").forEach((button) => {
+        button.addEventListener("click", function () {
+          const title = this.getAttribute("data-title");
+          const price = this.getAttribute("data-price");
+
+          window.location.href = `booking.html?title=${encodeURIComponent(title)}&price=${encodeURIComponent(price)}`;
+        });
+      });
+    </script>
+    <script src="script.js" defer></script>
+  </body>
+</html>
